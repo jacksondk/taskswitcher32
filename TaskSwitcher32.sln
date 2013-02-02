@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TaskSwitcher32", "TaskSwitcher32\TaskSwitcher32.vcproj", "{406A2BBB-5F9F-4230-8999-762972E3AEBD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{406A2BBB-5F9F-4230-8999-762972E3AEBD}.Debug|Win32.ActiveCfg = Debug|Win32
+		{406A2BBB-5F9F-4230-8999-762972E3AEBD}.Debug|Win32.Build.0 = Debug|Win32
+		{406A2BBB-5F9F-4230-8999-762972E3AEBD}.Release|Win32.ActiveCfg = Release|Win32
+		{406A2BBB-5F9F-4230-8999-762972E3AEBD}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
