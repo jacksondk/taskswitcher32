@@ -13,3 +13,11 @@
 *.a
 
 *~
+
+Debug
+ipch
+*.opensdf
+*.sdf
+*.vcxproj.filters
+*.vcxproj.user
+

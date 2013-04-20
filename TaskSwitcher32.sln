@@ -1,7 +1,7 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 10.00
-# Visual Studio 2008
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TaskSwitcher32", "TaskSwitcher32\TaskSwitcher32.vcproj", "{406A2BBB-5F9F-4230-8999-762972E3AEBD}"
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TaskSwitcher32", "TaskSwitcher32\TaskSwitcher32.vcxproj", "{406A2BBB-5F9F-4230-8999-762972E3AEBD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
