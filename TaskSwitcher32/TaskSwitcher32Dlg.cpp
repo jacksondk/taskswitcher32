@@ -1,6 +1,3 @@
-// TaskSwitcher32Dlg.cpp : implementation file
-//
-
 #include "stdafx.h"
 #include "TaskSwitcher32.h"
 #include "TaskSwitcher32Dlg.h"
@@ -49,14 +46,18 @@ BOOL CTaskSwitcher32Dlg::OnInitDialog()
 	SetIcon(m_hIcon, TRUE);			// Set big icon
 	SetIcon(m_hIcon, FALSE);		// Set small icon
 
-	// TODO: Add extra initialization here
+	// Setup list view headers
 	m_windowList2.SetView( LV_VIEW_DETAILS );
 	m_windowList2.InsertColumn( 0, _T("Name"), LVCFMT_LEFT, 200, -1 );
 	m_windowList2.InsertColumn( 1, _T("Process" ), LVCFMT_LEFT, 400, -1 );
 	
+	// Set the search box 
 	m_filterBox.SetWindowTextW( this->search.c_str() );
+
+	// Call the filter
 	FilterList();
 
+	// Setup filter text box to send special keys to the list box and put focus on text box
 	m_filterBox.SetListBox( &m_windowList2 );
 	m_filterBox.SetFocus();
 
@@ -175,6 +176,7 @@ void CTaskSwitcher32Dlg::OnEnUpdateEdit1()
 	FilterList();
 }
 
+/// Make controls follow window size
 void CTaskSwitcher32Dlg::OnSize( UINT nType, int cx, int cy )
 {
 	if ( m_windowList2.m_hWnd != 0 )
@@ -184,18 +186,21 @@ void CTaskSwitcher32Dlg::OnSize( UINT nType, int cx, int cy )
 	CDialog::OnSize( nType, cx, cy );
 }
 
+// Dbl click is select
 void CTaskSwitcher32Dlg::OnNMDblclkList2(NMHDR *pNMHDR, LRESULT *pResult)
 {	
 	OnOK();
 	*pResult = 0;
 }
 
+// Return is select
 void CTaskSwitcher32Dlg::OnNMReturnList2(NMHDR *pNMHDR, LRESULT *pResult)
 {
 	OnOK();
 	*pResult = 0;
 }
 
+// Go to selected window
 void CTaskSwitcher32Dlg::OnOK()
 {
 	int idx = m_windowList2.GetSelectionMark();
@@ -203,5 +208,5 @@ void CTaskSwitcher32Dlg::OnOK()
 	if ( ::IsIconic( item->get_handle() ) )
 		::OpenIcon( item->get_handle() );
 	::SetForegroundWindow( item->get_handle() );	
-	CDialog::OnOK();
+	CDialog::OnOK(); // End window
 }

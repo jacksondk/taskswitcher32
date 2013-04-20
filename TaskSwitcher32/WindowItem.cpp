@@ -3,11 +3,12 @@
 #include <string.h>
 #include "WindowItem.h"
 
+// Ctor for window description class
 window_item::window_item(std::wstring title, std::wstring process_name, HWND handle)
 {
 	this->_title = title;
 	this->_lower_title = _title;
-	for ( int i = 0; i < _lower_title.length(); i++ )
+	for ( std::wstring::size_type i = 0; i < _lower_title.length(); i++ )
 	{
 		this->_lower_title[i] = towlower( this->_lower_title[i] );
 	}
@@ -17,10 +18,10 @@ window_item::window_item(std::wstring title, std::wstring process_name, HWND han
 
 window_list *list = NULL;
 
+/// Call back for EnumWindows in window::get_window_list() method. Adds window_items to global list 
 BOOL CALLBACK addWindows( HWND handle, LPARAM param )
 {
 	TCHAR title[100];
-	DWORD processId;
 	WINDOWINFO window_info;
 	
 	GetWindowInfo( handle,&window_info );
@@ -52,6 +53,7 @@ BOOL CALLBACK addWindows( HWND handle, LPARAM param )
 	return TRUE;
 }
 
+/// Initial enumeration of window list
 window_list * window_item::get_window_list()
 {
 	if ( list == NULL )

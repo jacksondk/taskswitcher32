@@ -12,7 +12,10 @@ public:
 
 	enum { IDD = IDD_SEARCH_BOX };
 
+	/// Set the list box to which messages is send when up, down or enter keys are entered
 	void SetListBox( CListCtrl * list );
+
+
 protected:
 	afx_msg void OnChar( UINT nChar, UINT nRepCount, UINT nFlags );
 	afx_msg void OnKeyDown( UINT nChar, UINT nRepCount, UINT nFlags );

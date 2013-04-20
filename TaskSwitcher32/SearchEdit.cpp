@@ -2,7 +2,6 @@
 
 #include "SearchEdit.h"
 
-
 BEGIN_MESSAGE_MAP(CSearchEdit, CEdit)
 	ON_WM_CHAR()
 	ON_WM_KEYDOWN()

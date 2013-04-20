@@ -20,4 +20,5 @@ ipch
 *.sdf
 *.vcxproj.filters
 *.vcxproj.user
+*.suo
 
